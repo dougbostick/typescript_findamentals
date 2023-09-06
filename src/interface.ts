@@ -14,4 +14,31 @@ interface Image {
 
 interface Product {
   id: string;
+  name: string;
+  price: number;
+  description: string;
+  image: Image;
 }
+
+interface Backpack<T> {
+  id: string;
+  product: T;
+  quantity: number;
+}
+
+interface Apple extends Product {}
+
+const Iphones: Backpack<Apple> = {
+  id: '1',
+  product: {
+    id: '1',
+    name: 'iPhone X',
+    price: 999,
+    description: 'Apple iPhone X',
+    image: {
+      url: 'apple.com',
+      size: { width: 100, height: 100 },
+    },
+  },
+  quantity: 200,
+};
