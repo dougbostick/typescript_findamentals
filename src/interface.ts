@@ -7,6 +7,26 @@ interface User {
   imageUrl?: string;
 }
 
+const user: User = {
+  id: 1,
+  name: 'Doug',
+  email: 'doug@doug.com',
+  password: 'doug',
+  role: 'programmer',
+  // imageUrl: 'url',
+};
+
+// const users: User[] = [];
+// const usersMap: Map<number, User> = new Map();
+
+const users: Array<User> | undefined = [];
+
+const fetchedUser: User | null = null;
+
+function getActiveUsers(count: number): User[] {
+  return users.slice(0, count);
+}
+
 interface Image {
   url: string;
   size: { width: number; height: number };
